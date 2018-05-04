@@ -5,13 +5,13 @@ function check() {
     var question4 = document.quiz.question4.value;
     var correct = 0;
 
-    if (question1 === "Blue") {
+    if (question1 === "Big Dipper") {
         correct++;
     }
-    if (question2 === "Yes") {
+    if (question2 === "Iraq") {
         correct++;
     }
-    if (question3 === "Austin") {
+    if (question3 === "Hippopotamus") {
         correct++;
     }
     if (question4 === "Only God Knows") {
@@ -24,34 +24,41 @@ function check() {
     document.getElementById("after_submit").style.visibility = "visible";
     document.getElementById("number_correct").innerHTML = "You got " + correct + " correct.";
 }
+
+
+
 var form = `
 <form id="quiz" name="quiz">
 
-<p>Question 1: What color is the sky?</p>
-<input type="radio" id="mc" name="question1" value="Blue"> Blue
+<p>Question 1: The 7 Brightest Stars In Ursa Major Are Collectively Known As This</p>
+<input type="radio" id="mc" name="question1" value="BIG DIPPER"> Big Dipper
 <br>
-<input type="radio" id="mc" name="question1" value="Green"> Green
+<input type="radio" id="mc" name="question1" value="Lyra"> Lyra
 <br>
-<input type="radio" id="mc" name="question1" value="Red"> Red
+<input type="radio" id="mc" name="question1" value="Orion"> Orion
 <br>
-<input type="radio" id="mc" name="question1" value="Brown"> Brown
-<br>
-
-
-<p>Questin 2: Does 1+1=2? </p>
-<input type="radio" id="mc" name="question2" value="Yes"> Yes
-<br>
-<input type="radio" id="mc" name="question2" value="No"> No
+<input type="radio" id="mc" name="question1" value="Aquila"> Aquila
 <br>
 
-<p>Question 3: What is the capital of Texas?</p>
-<input type="radio" id="mc" name="question3" value="Austin"> Austin
+
+<p>Questin 2: MOSUL & RAMADI CAN BOTH BE FOUND IN THIS MIDEAST COUNTRY</p>
+<input type="radio" id="mc" name="question2" value="Iraq"> Iraq
 <br>
-<input type="radio" id="mc" name="question3" value="Baltimore"> Baltimore
+<input type="radio" id="mc" name="question2" value="Syria"> Syria
 <br>
-<input type="radio" id="mc" name="question3" value="New York"> New York
+<input type="radio" id="mc" name="question2" value="Iran"> Iran
 <br>
-<input type="radio" id="mc" name="question3" value="Las Vegas"> Las Vegas
+<input type="radio" id="mc" name="question2" value="Turkey"> Turkey
+<br>
+
+<p>Question 3: ITS NAME IS FROM THE GREEK FOR "RIVER HORSE"</p>
+<input type="radio" id="mc" name="question3" value="HIPPOPOTAMUS"> Hippopotamus
+<br>
+<input type="radio" id="mc" name="question3" value="Tiger"> Tiger
+<br>
+<input type="radio" id="mc" name="question3" value="Elephant"> Elephant
+<br>
+<input type="radio" id="mc" name="question3" value="Snake"> Snake
 <br>
 
 <p>Question 4: Will I pass this class?</p>
@@ -71,7 +78,7 @@ var form = `
 `
 var clicked = false;
 
-var time = 20;
+var time = 40;
 
 function timer() {
     var timing = setInterval(function () {
