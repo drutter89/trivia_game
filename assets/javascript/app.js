@@ -71,7 +71,7 @@ var form = `
 `
 var clicked = false;
 
-var time = 5;
+var time = 60;
 
 function timer() {
     var timing = setInterval(function () {
