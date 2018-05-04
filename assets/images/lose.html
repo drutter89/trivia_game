@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <meta name="apple-itunes-app" content="app-id=919359310, affiliate-data=pt=105929823&ct=iOS%20Smart%20Banner">
+    <meta name="google-site-verification" content="RvMWy7GRfCjWuduy6e9-bqwarR17gxkn7AkvB1d50z0" />
+    <title>rocky iv, throw the damn towel animated GIF | PopKey</title>
+<meta name="description" content="Find the best rocky iv, throw the damn towel animated GIFs on PopKey">
+<link href="https://popkey-web.global.ssl.fastly.net/static/pkapp/css/pkapp.2cd377ff.min.css" media="all" rel="stylesheet" type="text/css">
+<link href="https://popkey-web.global.ssl.fastly.net/static/pkmedia/css/pkmedia.28ee5b58.min.css" media="all" rel="stylesheet" type="text/css">
+<link href="http://popkey.co/m/DQoae-rocky+iv-throw+the+damn+towel" rel="canonical">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="popkey" content="nohover">
+    <link rel="icon" type="image/ico" href="/favicon.ico"/>
+    <meta name="twitter:card" content="player">
+<meta name="twitter:account_id" content="2789989596">
+<meta name="twitter:app:name:iphone" content="PopKey Animated GIF Keyboard - Add Funny GIFs, LOL memes &amp; stickers to conversations">
+<meta name="twitter:app:name:ipad" content="PopKey Animated GIF Keyboard - Add Funny GIFs, LOL memes &amp; stickers to conversations">
+<meta name="twitter:app:id:iphone" content="919359310">
+<meta name="twitter:app:id:ipad" content="919359310">
+<meta name="twitter:site" content="@getpopkey">
+<meta name="twitter:creator" content="@getpopkey">
+<meta name="twitter:title" content="rocky iv, throw the damn towel animated GIF | PopKey">
+<meta name="twitter:description" content="Find the best rocky iv, throw the damn towel animated GIFs on PopKey">
+<meta name="twitter:image:src" content="https://m.popkey.co/746cc4/DQoae_f-thumbnail-100-0_s-600x0.jpg">
+<meta name="twitter:domain" content="popkey.co">
+<meta name="twitter:player" content="https://popkey.co/m/DQoae/embed?ref=embed">
+<meta name="twitter:player:width" content="500">
+<meta name="twitter:player:height" content="271">
+<meta property="fb:app_id" content="1561367854141677">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="rocky iv, throw the damn towel animated GIF | PopKey">
+<meta property="og:description" content="Find the best rocky iv, throw the damn towel animated GIFs on PopKey">
+<meta property="og:image" content="https://m.popkey.co/746cc4/DQoae_f-thumbnail-100-0_s-600x0.jpg">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="325">
+<meta property="og:site_name" content="PopKey">
+<meta property="og:video" content="https://m.popkey.co/0b1c51/DQoae.mp4">
+<meta property="og:video:secure_url" content="https://m.popkey.co/0b1c51/DQoae.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="500">
+<meta property="og:video:height" content="271">
+    <script type="text/javascript" src="https://popkey-web.global.ssl.fastly.net/static/pkapp/js/head.772c6098.min.js"></script></head>
+
+<body data-facebook-id="1561367854141677" data-api-token="" itemscope itemtype="http://schema.org/WebSite">
+    <meta itemprop="url" content="http://popkey.co/">
+
+    <div id="pkNotifications" class="notifications"></div>
+
+        <header class="masthead cf" role="banner">
+        <a class="logo-popkey logo-popkey--small masthead__logo js-analytics"
+            href="/"
+            title="Discover curated GIFs"
+            data-analytics-track-click="google"
+            data-analytics-category="Header section"
+            data-analytics-action="Clicked logo">
+            <picture>
+                <source srcset="https://popkey-web.global.ssl.fastly.net/static/pkapp/img/popkey-logo--small.png, https://popkey-web.global.ssl.fastly.net/static/pkapp/img/popkey-logo--small@2x.png 2x">
+                <img src="https://popkey-web.global.ssl.fastly.net/static/pkapp/img/popkey-logo--small@2x.png" width="29" height="36" alt="PopKey">
+            </picture>
+        </a>
+
+        <nav class="mainnav masthead__nav cf" role="navigation">
+
+            <button class="btn btn-icon mobile-nav-toggle pull-start js-dropdown" id="mobileNavToggle" type="button" data-toggle-elements="mobileNav,mobileNavIconOn,mobileNavIconOff" title="Toggle visibility of main navigation">
+                <span class="mobile-nav-toggle__icon wd-mainnav-mobile-toggle" id="mobileNavIconOff">
+                    <span class="is-visually-hidden">Menu</span>
+                </span>
+            </button>
+
+            <div class="mobile-nav cf pull-start" id="mobileNav">
+                <ul class="list list--hor list--primary mainnav__list">
+                    <li class="list__item">
+                        <a class="list__link  wd-mainnav-trending" href="/trending?ref=header_section" title="Discover new trending GIFs">Trending</a>
+                    </li>
+                    <li class="list__item">
+                        <a class="list__link  wd-mainnav-featured" href="/featured?ref=header_section" title="Discover unique featured GIFs">Featured</a>
+                    </li>
+                    <li class="list__item">
+                        <a class="list__link  wd-mainnav-channels" href="/channels?ref=header_section" title="Discover categorized GIFs">Channels</a>
+                    </li>
+                                        <li class="list__item is-not-mobile-search">
+                        <div class="list__link--form">
+                            <form class="form form-center" id="search" action="/search" method="GET" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+    <meta itemprop="target" content="http://popkey.co/search?q=%7Bq%7D">
+    <div class="form__row form__row--addon form__row--addon--icon spacing--none">
+        <label class="label is-visually-hidden" for="search-append">Search animated GIFs</label>
+        <input class="input input--alt input--small" id="search-append" name="q" maxlength="100" type="search" value="" placeholder="Search animated GIFs" required itemprop="query-input">
+        <button class="btn btn-icon input--append input--append--icon js-analytics" type="submit"
+            data-analytics-track-click="google"
+            data-analytics-category="Header section"
+            data-analytics-action="Clicked search">
+            <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 47">
+                <path d="M18.5 33.7c-8.2 0-14.8-6.9-14.8-15.5 0-8.5 6.6-15.5 14.8-15.5 8.2 0 14.8 6.9 14.8 15.5C33.2 26.8 26.6 33.7 18.5 33.7zM43.6 42.4L31.8 30.1c2.6-3.2 4.1-7.3 4.1-11.8C35.9 8.2 28.1 0 18.5 0S1 8.2 1 18.3s7.8 18.3 17.5 18.3c4.3 0 8.2-1.6 11.3-4.3l11.8 12.3c0.6 0.6 1.5 0.6 2 0C44.1 44 44.1 43 43.6 42.4z"></path>
+            </svg>
+            <span class="is-visually-hidden">Search</span>
+        </button>
+    </div>
+</form>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="list list--hor list--primary is-mobile-nav mainnav__secondarylist">
+                    <li class="list__item">
+                        <a class="list__link js-analytics" href="#modal-upload"  title="Upload GIFs to your account"
+                            data-analytics-track-click="google"
+                            data-analytics-category="Header section"
+                            data-analytics-label="User not logged in"
+                            data-analytics-action="Clicked upload">Upload</a>
+                    </li>
+                                            <li class="list__item">
+                            <a class="list__link" href="/login?redirect=/m/DQoae-rocky%2Biv-throw%2Bthe%2Bdamn%2Btowel&ref=header_section">Login</a>
+                        </li>
+                        <li class="list__item">
+                            <a class="list__link" href="/signup?redirect=/m/DQoae-rocky%2Biv-throw%2Bthe%2Bdamn%2Btowel&ref=header_section">Sign up</a>
+                        </li>
+                                                        </ul>
+            </div>
+
+                            <ul class="list list--hor list--primary pull-end mainnav__sublist">
+                                            <li class="list__item list__item--dropdown">
+                            <a class="list__link list__link--imp list__link--dropdown js-dropdown js-analytics" data-toggle-elements="ddApp" href="#"
+                                data-analytics-track-click="google"
+                                data-analytics-category="Header section"
+                                data-analytics-action="Clicked get app">
+                                Get PopKey App
+                            </a>
+
+                            <ul class="list list--hor list--apps list--dropdown is-large" id="ddApp">
+                                <li class="list__item">
+                                                                        <a class="list__link list__link--imp" href="/ios?ref=header_app_nav_section">
+                                        <svg class="list--apps__icon list--apps__icon--iphone" xmlns="http://www.w3.org/2000/svg" width="52" height="100" viewBox="0 0 52 100" version="1.1">
+                                            <path d="M43.9 0L8.1 0C3.9 0 0.5 3.4 0.5 7.5L0.5 92.5C0.5 96.6 3.9 100 8.1 100L43.9 100C48.1 100 51.5 96.6 51.5 92.5L51.5 7.5C51.5 3.4 48.1 0 43.9 0L43.9 0ZM26 96C23.5 96 21.5 94 21.5 91.5 21.5 88.9 23.5 86.9 26 86.9 28.5 86.9 30.5 88.9 30.5 91.5 30.6 94 28.5 96 26 96L26 96ZM48 82.8C48 82.9 47.9 83 47.8 83L4.2 83C4.1 83 4 82.9 4 82.8L4 17.2C4 17.1 4.1 17 4.2 17L47.8 17C47.9 17 48 17.1 48 17.2L48 82.8 48 82.8Z"></path>
+                                        </svg>
+                                        for iOS
+                                    </a>
+                                </li>
+                                <li class="list__item">
+                                    <a class="list__link" href="/send-gifs?ref=header_app_nav_section">
+                                        <svg class="list--apps__icon list--apps__icon--monitor" xmlns="http://www.w3.org/2000/svg" width="90" height="72" viewBox="0 0 90 72" version="1.1">
+                                            <path d="M90 3.6L89.9 3.6C89.6 1.7 87.9 0.3 85.9 0.3L4.1 0.3C2.1 0.3 0.4 1.7 0.1 3.6L0 3.6C0 3.7 0 3.8 0 4L0 4.4 0 40.7 0 58.3C0 60.5 1.9 62.4 4.1 62.4L35.1 62.4 35.1 68.4 21.9 68.4 21.9 71.7 68.1 71.7 68.1 68.4 54.9 68.4 54.9 62.4 85.9 62.4C88.1 62.4 90 60.5 90 58.3L90 40.7 90 4.4 90 4C90 3.8 90 3.7 90 3.6L90 3.6ZM86.1 56.8L3.9 56.8 3.8 56.8 3.8 42 3.9 42 3.9 6.1 86.1 6.1 86.1 56.8 86.1 56.8Z"></path>
+                                        </svg>
+                                        for Desktop
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                                            <li class="list__item is-not-mobile-nav">
+                            <a class="list__link" href="/login?redirect=/m/DQoae-rocky%2Biv-throw%2Bthe%2Bdamn%2Btowel&ref=header_section">Login</a>
+                        </li>
+                        <li class="list__item is-not-mobile-nav">
+                            <a class="list__link" href="/signup?redirect=/m/DQoae-rocky%2Biv-throw%2Bthe%2Bdamn%2Btowel&ref=header_section">Sign up</a>
+                        </li>
+                                        <li class="list__item list__item--flush is-not-mobile-nav">
+                        <a class="btn btn-default btn--small js-analytics" href="#modal-upload" title="Upload GIFs to your account"
+                            data-analytics-track-click="google"
+                            data-analytics-category="Header section"
+                            data-analytics-label="User not logged in"
+                            data-analytics-action="Clicked upload">Upload</a>
+                    </li>
+                                    </ul>
+                    </nav>
+    </header>
+
+    
+    <section class="main" role="main">
+                    <section class="layout-search is-mobile-search" role="search">
+                <form class="form form-center" id="search" action="/search" method="GET" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+    <meta itemprop="target" content="http://popkey.co/search?q=%7Bq%7D">
+    <div class="form__row form__row--addon form__row--addon--icon spacing--none">
+        <label class="label is-visually-hidden" for="search-append">Search animated GIFs</label>
+        <input class="input input--alt input--small" id="search-append" name="q" maxlength="100" type="search" value="" placeholder="Search animated GIFs" required itemprop="query-input">
+        <button class="btn btn-icon input--append input--append--icon js-analytics" type="submit"
+            data-analytics-track-click="google"
+            data-analytics-category="Header section"
+            data-analytics-action="Clicked search">
+            <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 47">
+                <path d="M18.5 33.7c-8.2 0-14.8-6.9-14.8-15.5 0-8.5 6.6-15.5 14.8-15.5 8.2 0 14.8 6.9 14.8 15.5C33.2 26.8 26.6 33.7 18.5 33.7zM43.6 42.4L31.8 30.1c2.6-3.2 4.1-7.3 4.1-11.8C35.9 8.2 28.1 0 18.5 0S1 8.2 1 18.3s7.8 18.3 17.5 18.3c4.3 0 8.2-1.6 11.3-4.3l11.8 12.3c0.6 0.6 1.5 0.6 2 0C44.1 44 44.1 43 43.6 42.4z"></path>
+            </svg>
+            <span class="is-visually-hidden">Search</span>
+        </button>
+    </div>
+</form>
+            </section>
+        
+        
+                    
+<div class="layout layout--single layout--flush">
+    <section class="pr cf spacing--papa">
+        <div class="spacing">
+            
+<div class="tiles tiles--single pr js-tiles" itemscope itemtype="http://schema.org/ImageObject">
+    <link itemprop="url" href="http://popkey.co/m/DQoae">
+            <meta itemprop="keywords" content="rocky iv, throw the damn towel">
+    
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <link itemprop="url" href="http://popkey.co/u/gVxZ">
+    </span>
+    
+        <meta itemprop="datePublished" content="2016-04-10 21:06:22">
+    <div class="tiles__item">
+        <div class="tiles__wrap">
+                            <meta itemprop="image" content="https://m.popkey.co/7d270b/DQoae.gif">
+                <meta itemprop="width" content="500">
+                <meta itemprop="height" content="271">
+                
+                <div class="tiles__link js-tile js-tile--featured"
+                    data-template="autoplay"
+                    data-jpg="https://m.popkey.co/0c8b05/DQoae_f-thumbnail-100-0.jpg"
+                    data-mp4="https://m.popkey.co/0b1c51/DQoae.mp4"
+                    data-gif="https://m.popkey.co/7d270b/DQoae.gif"
+                    data-class="is-landscape"
+                    data-loader="jsSingleLoader">
+                    <img class="tiles__media is-landscape js-image" src="https://m.popkey.co/0c8b05/DQoae_f-thumbnail-100-0.jpg" data-static="https://m.popkey.co/0c8b05/DQoae_f-thumbnail-100-0.jpg" data-animated="https://m.popkey.co/7d270b/DQoae.gif" alt="rocky&#x20;iv&#x20;throw&#x20;the&#x20;damn&#x20;towel&#x20;animated&#x20;GIF">
+                </div>
+                    </div>
+    </div>
+
+                                        <div class="favourite">
+                    <a class="btn btn-icon btn-icon--alt btn-icon--alt--large" href="#modal-favorite">
+                        <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71 62" version="1.1">
+                            <path class="heart__fill" d="M35.32 62.02L31.92 59.39C17.57 48.3 8.91 41.6 3.86 32.67 -0.97 24.13-0.39 17.39 0.94 13.24 2.56 8.19 6.22 4.13 11.25 1.8 13.83 0.61 16.64 0 19.59 0 25.82 0 31.57 2.65 35.32 7.02 39.07 2.65 44.83 0 51.06 0 54.01 0 56.81 0.61 59.39 1.8 64.42 4.13 68.08 8.19 69.71 13.24 71.04 17.39 71.62 24.13 66.78 32.67 61.73 41.61 53.06 48.31 38.68 59.42L35.32 62.02 35.32 62.02Z"></path>
+                            <path class="heart__border" d="M35.32 62.02L31.92 59.39C17.57 48.3 8.91 41.6 3.86 32.67 -0.97 24.13-0.39 17.39 0.94 13.24 2.56 8.19 6.22 4.13 11.25 1.8 13.83 0.61 16.64 0 19.59 0 25.82 0 31.57 2.65 35.32 7.02 39.07 2.65 44.83 0 51.06 0 54.01 0 56.81 0.61 59.39 1.8 64.42 4.13 68.08 8.19 69.71 13.24 71.04 17.39 71.62 24.13 66.78 32.67 61.73 41.61 53.06 48.31 38.68 59.42L35.32 62.02 35.32 62.02ZM19.59 6C17.51 6 15.56 6.42 13.77 7.25 10.28 8.86 7.76 11.64 6.65 15.08 5.27 19.39 6.11 24.46 9.09 29.72 13.51 37.55 21.27 43.58 35.32 54.44 49.37 43.58 57.14 37.54 61.56 29.72 64.54 24.46 65.38 19.39 63.99 15.08 62.89 11.64 60.36 8.86 56.88 7.25 55.09 6.42 53.13 6 51.06 6 45.43 6 40.2 9.12 38.04 13.76L35.32 19.62 32.6 13.76C30.45 9.12 25.21 6 19.59 6L19.59 6Z"></path>
+                        </svg>
+                    </a>
+                </div>
+                    
+        <div id="pkReportMedia" class="report"></div>
+    
+    <span class="tiles__loader is-hidden js-loader" id="jsSingleLoader"></span>
+
+    </div>
+        </div>
+
+        <div class="layout--flush__inner">
+            <div class="split split--twothirds spacing">
+                <div class="split__start">
+                                            <h3 class="spacing--tiny">Share this GIF</h3>
+                        <div class="js-social-share-component spacing--mama" id="pkSocialShare"></div>
+
+                        
+                        <div class="form__row">
+                            <label class="label" for="input-gif">Direct link</label>
+                            <input class="input js-select" type="text" name="input-gif" value="https&#x3A;&#x2F;&#x2F;m.popkey.co&#x2F;7d270b&#x2F;DQoae.gif" readonly>
+                        </div>
+
+                        <div class="form__row">
+                            <label class="label" for="input-iframe">iframe embed</label>
+                            <input class="input js-select" type="text" name="input-iframe" value="&lt;div style=&quot;position: relative; height: 0; overflow: hidden; padding-bottom: 54.107142857143%&quot;&gt;&lt;iframe style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot; width=&quot;560&quot; height=&quot;303&quot; src=&quot;//popkey.co/m/DQoae-rocky+iv-throw+the+damn+towel/embed&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;" readonly>
+                        </div>
+
+                                                    <ul class="tags spacing">
+                                                                    <li class="tags__item">
+                                        <a class="tags__link" href="/search/rocky%20iv">#rocky iv</a>
+                                    </li>
+                                                                    <li class="tags__item">
+                                        <a class="tags__link" href="/search/throw%20the%20damn%20towel">#throw the damn towel</a>
+                                    </li>
+                                                            </ul>
+                        
+                                                                <p class="user spacing--baby">
+                            <a class="user__link" href="/u/gVxZ">
+                                <img class="avatar" src="https://popkey-avatars.global.ssl.fastly.net/default/36.jpg" width="36" height="36" alt="gVxZ's avatar">
+                                @gVxZ                            </a>
+                        </p>
+                                    </div>
+
+                <div class="split__end spacing--none text-end">
+                    <p class="spacing-top spacing--baby">
+                        <a target="_blank" href="https://itunes.apple.com/app/apple-store/id919359310?pt=105929823&ct=Web%20-%20Gif%20Page&mt=8">
+                            <svg class="app-store" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 40">
+                                <path class="app-store__border" d="M130.197,40H4.729C2.122,40,0,37.872,0,35.267V4.726C0,2.12,2.122,0,4.729,0h125.468
+                                    C132.803,0,135,2.12,135,4.726v30.541C135,37.872,132.803,40,130.197,40L130.197,40z"></path>
+                                <path class="app-store__background" d="M134.032,35.268c0,2.116-1.714,3.83-3.834,3.83H4.729c-2.119,0-3.839-1.714-3.839-3.83V4.725
+                                    c0-2.115,1.72-3.835,3.839-3.835h125.468c2.121,0,3.834,1.72,3.834,3.835L134.032,35.268L134.032,35.268z"></path>
+                                <g class="app-store__foreground">
+                                    <path d="M30.128,19.784c-0.029-3.223,2.639-4.791,2.761-4.864c-1.511-2.203-3.853-2.504-4.676-2.528
+                                        c-1.967-0.207-3.875,1.177-4.877,1.177c-1.022,0-2.565-1.157-4.228-1.123c-2.14,0.033-4.142,1.272-5.24,3.196
+                                        c-2.266,3.923-0.576,9.688,1.595,12.859c1.086,1.553,2.355,3.287,4.016,3.226c1.625-0.067,2.232-1.036,4.193-1.036
+                                        c1.943,0,2.513,1.036,4.207,0.997c1.744-0.028,2.842-1.56,3.89-3.127c1.255-1.78,1.759-3.533,1.779-3.623
+                                        C33.507,24.924,30.161,23.647,30.128,19.784z"></path>
+                                    <path d="M26.928,10.306c0.874-1.093,1.472-2.58,1.306-4.089c-1.265,0.056-2.847,0.875-3.758,1.944
+                                        c-0.806,0.942-1.526,2.486-1.34,3.938C24.557,12.205,26.016,11.382,26.928,10.306z"></path>
+                                </g>
+                                <g class="app-store__foreground">
+                                    <path d="M53.645,31.504h-2.271l-1.244-3.909h-4.324l-1.185,3.909h-2.211l4.284-13.308h2.646L53.645,31.504z
+                                         M49.755,25.955L48.63,22.48c-0.119-0.355-0.342-1.191-0.671-2.507h-0.04c-0.131,0.566-0.342,1.402-0.632,2.507l-1.105,3.475
+                                        H49.755z"></path>
+                                    <path d="M64.662,26.588c0,1.632-0.441,2.922-1.323,3.869c-0.79,0.843-1.771,1.264-2.942,1.264
+                                        c-1.264,0-2.172-0.454-2.725-1.362h-0.04v5.055h-2.132V25.067c0-1.026-0.027-2.079-0.079-3.159h1.875l0.119,1.521h0.04
+                                        c0.711-1.146,1.79-1.718,3.238-1.718c1.132,0,2.077,0.447,2.833,1.342C64.284,23.949,64.662,25.127,64.662,26.588z M62.49,26.666
+                                        c0-0.934-0.21-1.704-0.632-2.31c-0.461-0.632-1.08-0.948-1.856-0.948c-0.526,0-1.004,0.176-1.431,0.523
+                                        c-0.428,0.35-0.708,0.807-0.839,1.373c-0.066,0.264-0.099,0.48-0.099,0.65v1.6c0,0.698,0.214,1.287,0.642,1.768
+                                        s0.984,0.721,1.668,0.721c0.803,0,1.428-0.31,1.875-0.928C62.266,28.496,62.49,27.68,62.49,26.666z"></path>
+                                    <path d="M75.699,26.588c0,1.632-0.441,2.922-1.324,3.869c-0.789,0.843-1.77,1.264-2.941,1.264
+                                        c-1.264,0-2.172-0.454-2.724-1.362H68.67v5.055h-2.132V25.067c0-1.026-0.027-2.079-0.079-3.159h1.875l0.119,1.521h0.04
+                                        c0.71-1.146,1.789-1.718,3.238-1.718c1.131,0,2.076,0.447,2.834,1.342C75.32,23.949,75.699,25.127,75.699,26.588z M73.527,26.666
+                                        c0-0.934-0.211-1.704-0.633-2.31c-0.461-0.632-1.078-0.948-1.855-0.948c-0.527,0-1.004,0.176-1.432,0.523
+                                        c-0.428,0.35-0.707,0.807-0.838,1.373c-0.065,0.264-0.099,0.48-0.099,0.65v1.6c0,0.698,0.214,1.287,0.64,1.768
+                                        c0.428,0.48,0.984,0.721,1.67,0.721c0.803,0,1.428-0.31,1.875-0.928C73.303,28.496,73.527,27.68,73.527,26.666z"></path>
+                                    <path d="M88.039,27.772c0,1.132-0.393,2.053-1.182,2.764c-0.867,0.777-2.074,1.165-3.625,1.165
+                                        c-1.432,0-2.58-0.276-3.449-0.829l0.494-1.777c0.936,0.566,1.963,0.85,3.082,0.85c0.803,0,1.428-0.182,1.877-0.544
+                                        c0.447-0.362,0.67-0.848,0.67-1.454c0-0.54-0.184-0.995-0.553-1.364c-0.367-0.369-0.98-0.712-1.836-1.029
+                                        c-2.33-0.869-3.494-2.142-3.494-3.816c0-1.094,0.408-1.991,1.225-2.689c0.814-0.699,1.9-1.048,3.258-1.048
+                                        c1.211,0,2.217,0.211,3.02,0.632l-0.533,1.738c-0.75-0.408-1.598-0.612-2.547-0.612c-0.75,0-1.336,0.185-1.756,0.553
+                                        c-0.355,0.329-0.533,0.73-0.533,1.205c0,0.526,0.203,0.961,0.611,1.303c0.355,0.316,1,0.658,1.936,1.027
+                                        c1.145,0.461,1.986,1,2.527,1.618C87.77,26.081,88.039,26.852,88.039,27.772z"></path>
+                                    <path d="M95.088,23.508h-2.35v4.659c0,1.185,0.414,1.777,1.244,1.777c0.381,0,0.697-0.033,0.947-0.099l0.059,1.619
+                                        c-0.42,0.157-0.973,0.236-1.658,0.236c-0.842,0-1.5-0.257-1.975-0.77c-0.473-0.514-0.711-1.376-0.711-2.587v-4.837h-1.4v-1.6h1.4
+                                        v-1.757l2.094-0.632v2.389h2.35V23.508z"></path>
+                                    <path d="M105.691,26.627c0,1.475-0.422,2.686-1.264,3.633c-0.883,0.975-2.055,1.461-3.516,1.461
+                                        c-1.408,0-2.529-0.467-3.365-1.401s-1.254-2.113-1.254-3.534c0-1.487,0.43-2.705,1.293-3.652c0.861-0.948,2.023-1.422,3.484-1.422
+                                        c1.408,0,2.541,0.467,3.396,1.402C105.283,24.021,105.691,25.192,105.691,26.627z M103.479,26.696
+                                        c0-0.885-0.189-1.644-0.572-2.277c-0.447-0.766-1.086-1.148-1.914-1.148c-0.857,0-1.508,0.383-1.955,1.148
+                                        c-0.383,0.634-0.572,1.405-0.572,2.317c0,0.885,0.189,1.644,0.572,2.276c0.461,0.766,1.105,1.148,1.936,1.148
+                                        c0.814,0,1.453-0.39,1.914-1.168C103.281,28.347,103.479,27.58,103.479,26.696z"></path>
+                                    <path d="M112.621,23.783c-0.211-0.039-0.436-0.059-0.672-0.059c-0.75,0-1.33,0.283-1.738,0.85
+                                        c-0.355,0.5-0.533,1.132-0.533,1.895v5.035h-2.131l0.02-6.574c0-1.106-0.027-2.113-0.08-3.021h1.857l0.078,1.836h0.059
+                                        c0.225-0.631,0.58-1.139,1.066-1.52c0.475-0.343,0.988-0.514,1.541-0.514c0.197,0,0.375,0.014,0.533,0.039V23.783z"></path>
+                                    <path d="M122.156,26.252c0,0.382-0.025,0.704-0.078,0.967h-6.396c0.025,0.948,0.334,1.673,0.928,2.173
+                                        c0.539,0.447,1.236,0.671,2.092,0.671c0.947,0,1.811-0.151,2.588-0.454l0.334,1.48c-0.908,0.396-1.98,0.593-3.217,0.593
+                                        c-1.488,0-2.656-0.438-3.506-1.313c-0.848-0.875-1.273-2.05-1.273-3.524c0-1.447,0.395-2.652,1.186-3.613
+                                        c0.828-1.026,1.947-1.539,3.355-1.539c1.383,0,2.43,0.513,3.141,1.539C121.873,24.047,122.156,25.055,122.156,26.252z
+                                         M120.123,25.699c0.014-0.632-0.125-1.178-0.414-1.639c-0.369-0.593-0.936-0.889-1.699-0.889c-0.697,0-1.264,0.289-1.697,0.869
+                                        c-0.355,0.461-0.566,1.014-0.631,1.658H120.123z"></path>
+                                </g>
+                                <g class="app-store__foreground">
+                                    <path d="M49.05,10.009c0,1.177-0.353,2.063-1.058,2.658c-0.653,0.549-1.581,0.824-2.783,0.824
+                                        c-0.596,0-1.106-0.026-1.533-0.078V6.982c0.557-0.09,1.157-0.136,1.805-0.136c1.145,0,2.008,0.249,2.59,0.747
+                                        C48.723,8.156,49.05,8.961,49.05,10.009z M47.945,10.038c0-0.763-0.202-1.348-0.606-1.756c-0.404-0.407-0.994-0.611-1.771-0.611
+                                        c-0.33,0-0.611,0.022-0.844,0.068v4.889c0.129,0.02,0.365,0.029,0.708,0.029c0.802,0,1.421-0.223,1.857-0.669
+                                        S47.945,10.892,47.945,10.038z"></path>
+                                    <path d="M54.909,11.037c0,0.725-0.207,1.319-0.621,1.785c-0.434,0.479-1.009,0.718-1.727,0.718
+                                        c-0.692,0-1.243-0.229-1.654-0.689c-0.41-0.459-0.615-1.038-0.615-1.736c0-0.73,0.211-1.329,0.635-1.794s0.994-0.698,1.712-0.698
+                                        c0.692,0,1.248,0.229,1.669,0.688C54.708,9.757,54.909,10.333,54.909,11.037z M53.822,11.071c0-0.435-0.094-0.808-0.281-1.119
+                                        c-0.22-0.376-0.533-0.564-0.94-0.564c-0.421,0-0.741,0.188-0.961,0.564c-0.188,0.311-0.281,0.69-0.281,1.138
+                                        c0,0.435,0.094,0.808,0.281,1.119c0.227,0.376,0.543,0.564,0.951,0.564c0.4,0,0.714-0.191,0.94-0.574
+                                        C53.725,11.882,53.822,11.506,53.822,11.071z"></path>
+                                    <path d="M62.765,8.719l-1.475,4.714h-0.96l-0.611-2.047c-0.155-0.511-0.281-1.019-0.379-1.523h-0.019
+                                        c-0.091,0.518-0.217,1.025-0.379,1.523l-0.649,2.047h-0.971l-1.387-4.714h1.077l0.533,2.241c0.129,0.53,0.235,1.035,0.32,1.513
+                                        h0.019c0.078-0.394,0.207-0.896,0.389-1.503l0.669-2.25h0.854l0.641,2.202c0.155,0.537,0.281,1.054,0.378,1.552h0.029
+                                        c0.071-0.485,0.178-1.002,0.32-1.552l0.572-2.202H62.765z"></path>
+                                    <path d="M68.198,13.433H67.15v-2.7c0-0.832-0.316-1.248-0.95-1.248c-0.311,0-0.562,0.114-0.757,0.343
+                                        c-0.193,0.229-0.291,0.499-0.291,0.808v2.796h-1.048v-3.366c0-0.414-0.013-0.863-0.038-1.349h0.921l0.049,0.737h0.029
+                                        c0.122-0.229,0.304-0.418,0.543-0.569c0.284-0.176,0.602-0.265,0.95-0.265c0.44,0,0.806,0.142,1.097,0.427
+                                        c0.362,0.349,0.543,0.87,0.543,1.562V13.433z"></path>
+                                    <path d="M71.088,13.433h-1.047V6.556h1.047V13.433z"></path>
+                                    <path d="M77.258,11.037c0,0.725-0.207,1.319-0.621,1.785c-0.434,0.479-1.01,0.718-1.727,0.718
+                                        c-0.693,0-1.244-0.229-1.654-0.689c-0.41-0.459-0.615-1.038-0.615-1.736c0-0.73,0.211-1.329,0.635-1.794s0.994-0.698,1.711-0.698
+                                        c0.693,0,1.248,0.229,1.67,0.688C77.057,9.757,77.258,10.333,77.258,11.037z M76.17,11.071c0-0.435-0.094-0.808-0.281-1.119
+                                        c-0.219-0.376-0.533-0.564-0.939-0.564c-0.422,0-0.742,0.188-0.961,0.564c-0.188,0.311-0.281,0.69-0.281,1.138
+                                        c0,0.435,0.094,0.808,0.281,1.119c0.227,0.376,0.543,0.564,0.951,0.564c0.4,0,0.713-0.191,0.939-0.574
+                                        C76.074,11.882,76.17,11.506,76.17,11.071z"></path>
+                                    <path d="M82.33,13.433h-0.941l-0.078-0.543h-0.029c-0.322,0.433-0.781,0.65-1.377,0.65
+                                        c-0.445,0-0.805-0.143-1.076-0.427c-0.246-0.258-0.369-0.579-0.369-0.96c0-0.576,0.24-1.015,0.723-1.319
+                                        c0.482-0.304,1.16-0.453,2.033-0.446V10.3c0-0.621-0.326-0.931-0.979-0.931c-0.465,0-0.875,0.117-1.229,0.349l-0.213-0.688
+                                        c0.438-0.271,0.979-0.407,1.617-0.407c1.232,0,1.85,0.65,1.85,1.95v1.736C82.262,12.78,82.285,13.155,82.33,13.433z
+                                         M81.242,11.813v-0.727c-1.156-0.02-1.734,0.297-1.734,0.95c0,0.246,0.066,0.43,0.201,0.553c0.135,0.123,0.307,0.184,0.512,0.184
+                                        c0.23,0,0.445-0.073,0.641-0.218c0.197-0.146,0.318-0.331,0.363-0.558C81.236,11.946,81.242,11.884,81.242,11.813z"></path>
+                                    <path d="M88.285,13.433h-0.93l-0.049-0.757h-0.029c-0.297,0.576-0.803,0.864-1.514,0.864
+                                        c-0.568,0-1.041-0.223-1.416-0.669s-0.562-1.025-0.562-1.736c0-0.763,0.203-1.381,0.611-1.853c0.395-0.44,0.879-0.66,1.455-0.66
+                                        c0.633,0,1.076,0.213,1.328,0.64h0.02V6.556h1.049v5.607C88.248,12.622,88.26,13.045,88.285,13.433z M87.199,11.445v-0.786
+                                        c0-0.136-0.01-0.246-0.029-0.33c-0.059-0.252-0.186-0.464-0.379-0.635c-0.195-0.171-0.43-0.257-0.701-0.257
+                                        c-0.391,0-0.697,0.155-0.922,0.466c-0.223,0.311-0.336,0.708-0.336,1.193c0,0.466,0.107,0.844,0.322,1.135
+                                        c0.227,0.31,0.533,0.465,0.916,0.465c0.344,0,0.619-0.129,0.828-0.388C87.1,12.069,87.199,11.781,87.199,11.445z"></path>
+                                    <path d="M97.248,11.037c0,0.725-0.207,1.319-0.621,1.785c-0.434,0.479-1.008,0.718-1.727,0.718
+                                        c-0.691,0-1.242-0.229-1.654-0.689c-0.41-0.459-0.615-1.038-0.615-1.736c0-0.73,0.211-1.329,0.635-1.794s0.994-0.698,1.713-0.698
+                                        c0.691,0,1.248,0.229,1.668,0.688C97.047,9.757,97.248,10.333,97.248,11.037z M96.162,11.071c0-0.435-0.094-0.808-0.281-1.119
+                                        c-0.221-0.376-0.533-0.564-0.941-0.564c-0.42,0-0.74,0.188-0.961,0.564c-0.188,0.311-0.281,0.69-0.281,1.138
+                                        c0,0.435,0.094,0.808,0.281,1.119c0.227,0.376,0.543,0.564,0.951,0.564c0.4,0,0.715-0.191,0.941-0.574
+                                        C96.064,11.882,96.162,11.506,96.162,11.071z"></path>
+                                    <path d="M102.883,13.433h-1.047v-2.7c0-0.832-0.316-1.248-0.951-1.248c-0.311,0-0.562,0.114-0.756,0.343
+                                        s-0.291,0.499-0.291,0.808v2.796h-1.049v-3.366c0-0.414-0.012-0.863-0.037-1.349h0.92l0.049,0.737h0.029
+                                        c0.123-0.229,0.305-0.418,0.543-0.569c0.285-0.176,0.602-0.265,0.951-0.265c0.439,0,0.805,0.142,1.096,0.427
+                                        c0.363,0.349,0.543,0.87,0.543,1.562V13.433z"></path>
+                                    <path d="M109.936,9.504h-1.154v2.29c0,0.582,0.205,0.873,0.611,0.873c0.188,0,0.344-0.016,0.467-0.049
+                                        l0.027,0.795c-0.207,0.078-0.479,0.117-0.814,0.117c-0.414,0-0.736-0.126-0.969-0.378c-0.234-0.252-0.35-0.676-0.35-1.271V9.504
+                                        h-0.689V8.719h0.689V7.855l1.027-0.31v1.173h1.154V9.504z"></path>
+                                    <path d="M115.484,13.433h-1.049v-2.68c0-0.845-0.316-1.268-0.949-1.268c-0.486,0-0.818,0.245-1,0.735
+                                        c-0.031,0.103-0.049,0.229-0.049,0.377v2.835h-1.047V6.556h1.047v2.841h0.02c0.33-0.517,0.803-0.775,1.416-0.775
+                                        c0.434,0,0.793,0.142,1.078,0.427c0.355,0.355,0.533,0.883,0.533,1.581V13.433z"></path>
+                                    <path d="M121.207,10.853c0,0.188-0.014,0.346-0.039,0.475h-3.143c0.014,0.466,0.164,0.821,0.455,1.067
+                                        c0.266,0.22,0.609,0.33,1.029,0.33c0.465,0,0.889-0.074,1.271-0.223l0.164,0.728c-0.447,0.194-0.973,0.291-1.582,0.291
+                                        c-0.73,0-1.305-0.215-1.721-0.645c-0.418-0.43-0.625-1.007-0.625-1.731c0-0.711,0.193-1.303,0.582-1.775
+                                        c0.406-0.504,0.955-0.756,1.648-0.756c0.678,0,1.193,0.252,1.541,0.756C121.068,9.77,121.207,10.265,121.207,10.853z
+                                         M120.207,10.582c0.008-0.311-0.061-0.579-0.203-0.805c-0.182-0.291-0.459-0.437-0.834-0.437c-0.342,0-0.621,0.142-0.834,0.427
+                                        c-0.174,0.227-0.277,0.498-0.311,0.815H120.207z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </p>
+
+                                    </div>
+            </div>
+        </div>
+    </section>
+            <section class="layout--flush__inner">
+            <h3>Similar GIFs</h3>
+
+            <div class="spacing js-tiles">
+                    <ul class="tiles">
+                                    <li class="tiles__item">
+
+    
+    
+    <div class="tiles__wrap">
+        <div class="tiles__container">
+            <a class="tiles__link js-tile js-tile--featured wd_media_tile_787131"
+                href="http://popkey.co/m/K5o38-throw+the+damn+towel"
+                data-template="async"
+                data-jpg="https://m.popkey.co/73866f/K5o38_f-thumbnail-100-0_s-200x150.jpg"
+                data-mp4="https://m.popkey.co/f3dbdc/K5o38_s-200x150.mp4"
+                data-gif="https://m.popkey.co/46ee9e/K5o38_s-200x150.gif">
+                <img class="tiles__media js-image" src="https://m.popkey.co/73866f/K5o38_f-thumbnail-100-0_s-200x150.jpg" data-static="https://m.popkey.co/73866f/K5o38_f-thumbnail-100-0_s-200x150.jpg" data-animated="https://m.popkey.co/46ee9e/K5o38_s-200x150.gif" alt="throw&#x20;the&#x20;damn&#x20;towel&#x20;animated&#x20;GIF">
+                <span class="tiles__loader is-hidden js-loader"></span>
+            </a>
+        </div>
+    </div>
+</li>
+                        </ul>
+            </div>
+        </section>
+    </div>
+
+<script>
+    var pkData = pkData || {};
+    pkData.media = { id: "08860a7d-18f9-40cb-9fd9-7e919fc51724" };
+    pkData.socialShare = {
+        title: 'Check out this awesome #GIF I found on #PopKey',
+        category: 'GIF page',
+        link: "http:\/\/popkey.co\/m\/DQoae-rocky+iv-throw+the+damn+towel",
+        image: "https:\/\/popkey-assets.s3.amazonaws.com\/original-92f61307-9206-4120-9100-941a651f43dc.gif",
+        exclude: []
+    };
+</script>
+
+            </section>
+
+        <footer class="footer" role="contentinfo">
+        <div class="layout">
+            <div class="row">
+                <div class="col--4 papa--12">
+                    <p>&copy; 2018 PopKey. All Rights Reserved.</p>
+                    <div itemscope itemtype="http://schema.org/Organization">
+                        <a class="logo-popkey" href="/?ref=footer_section" itemprop="url">
+                            <picture>
+                                <source srcset="https://popkey-web.global.ssl.fastly.net/static/pkapp/img/popkey-logo.png, https://popkey-web.global.ssl.fastly.net/static/pkapp/img/popkey-logo@2x.png 2x">
+                                <img src="https://popkey-web.global.ssl.fastly.net/static/pkapp/img/popkey-logo@2x.png" width="40" height="49" alt="PopKey" itemprop="logo">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="col--3 papa--4 mama--6 cf">
+                    <ul class="list list--vert list--float">
+                        <li class="list__item">
+                            <a class="wd-footernav-partners" href="/partners?ref=footer_section">Partners</a>
+                        </li>
+                                                    <li class="list__item">
+                                <a class="wd-footernav-ios" href="/ios?ref=footer_section">PopKey for iOS</a>
+                            </li>
+                                                                            <li class="list__item">
+                                <a class="wd-footernav-desktop" href="/send-gifs?ref=footer_section">PopKey for Desktop</a>
+                            </li>
+                                                <li class="list__item">
+                            <a href="http://blog.popkey.co?ref=footer_section" target="_blank">Blog</a>
+                        </li>
+                        <li class="list__item">
+                            <a class="wd-footernav-careers" href="/careers">Careers</a>
+                        </li>
+                        <li class="list__item">
+                            <a class="list__link--new" href="/api">PopKey GIF API</a>
+                        </li>
+                                                                                                            <li class="list__item">
+                                    <a class="list__link" href="/login?redirect=/m/DQoae-rocky%2Biv-throw%2Bthe%2Bdamn%2Btowel&ref=footer_section">Login</a>
+                                </li>
+                                <li class="list__item">
+                                    <a class="list__link" href="/signup?redirect=/m/DQoae-rocky%2Biv-throw%2Bthe%2Bdamn%2Btowel&ref=footer_section">Sign up</a>
+                                </li>
+                                                                        </ul>
+                </div>
+                <div class="col--2 papa--4 mama--6 cf">
+                    <ul class="list list--vert list--float">
+                        <li class="list__item">
+                            <a class="wd-footernav-help" href="/help?ref=footer_section">Help</a>
+                        </li>
+                        <li class="list__item">
+                            <a class="wd-footernav-faqs" href="/help?ref=footer_section#faqs">FAQs</a>
+                        </li>
+                        <li class="list__item">
+                            <a class="wd-footernav-terms" href="/terms?ref=footer_section">Terms of service</a>
+                        </li>
+                        <li class="list__item">
+                            <a class="wd-footernav-privacy" href="/privacy?ref=footer_section">Privacy policy</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col--3 papa--4 mama--12 spacing--none">
+                    <ul class="list list--hor">
+                        <li class="list__item">
+                            <a class="btn btn-icon is-inline js-analytics" href="https://www.facebook.com/pages/PopKey/1469293470011956" target="_blank"
+                                data-analytics-track-click="google"
+                                data-analytics-category="Footer section"
+                                data-analytics-label="Facebook"
+                                data-analytics-action="Social follow">
+                                <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 30">
+                                    <path d="M10 10L10 7C10 5.7 10.3 5 12.4 5L15 5 15 0 11 0C6 0 4 3.3 4 7L4 10 0 10 0 15 4 15 4 30 10 30 10 15 14.4 15 15 10 10 10 10 10Z"></path>
+                                </svg>
+                                <span class="is-visually-hidden">Facebook</span>
+                            </a>
+                        </li><!--
+                        --><li class="list__item">
+                            <a class="btn btn-icon is-inline js-analytics" href="http://twitter.com/getpopkey" target="_blank"
+                                data-analytics-track-click="google"
+                                data-analytics-category="Footer section"
+                                data-analytics-label="Twitter"
+                                data-analytics-action="Social follow">
+                                <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 140">
+                                    <path d="M171.8 16.8C165.5 19.6 158.7 21.5 151.6 22.3 158.9 18 164.5 11.1 167.1 2.9 160.3 6.9 152.8 9.8 144.7 11.4 138.3 4.6 129.2 0.3 119.1 0.3 99.6 0.3 83.9 16.1 83.9 35.5 83.9 38.3 84.2 40.9 84.8 43.5 55.5 42 29.6 28 12.3 6.7 9.2 11.9 7.5 18 7.5 24.4 7.5 36.6 13.7 47.4 23.1 53.7 17.4 53.5 12 52 7.2 49.3 7.2 49.5 7.2 49.6 7.2 49.8 7.2 66.8 19.3 81 35.4 84.3 32.5 85.1 29.4 85.5 26.2 85.5 23.9 85.5 21.7 85.3 19.5 84.9 24 98.8 37 109 52.4 109.3 40.4 118.7 25.2 124.4 8.7 124.4 5.9 124.4 3.1 124.2 0.3 123.9 15.9 133.9 34.4 139.7 54.3 139.7 119 139.7 154.4 86.1 154.4 39.6 154.4 38 154.3 36.5 154.3 35 161.1 30.1 167.1 23.9 171.8 16.8L171.8 16.8Z"></path>
+                                </svg>
+                                <span class="is-visually-hidden">Twitter</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+            <section class="modal modal--upload" id="modal-upload" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+            <div class="modal-inner">
+                <a href="#!" class="modal-close" title="Close this modal" data-close="Close" data-dismiss="modal">
+                    <svg class="modal__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+                        <g fill-rule="evenodd">
+                            <path d="M10.9 1.5C11 1.4 11 1.2 10.9 1.1 10.8 1 10.6 1 10.5 1.1L6 5.6 1.5 1.1C1.4 1 1.2 1 1.1 1.1 1 1.2 1 1.4 1.1 1.5L5.6 6 1.1 10.5C1 10.6 1 10.8 1.1 10.9 1.2 11 1.2 11 1.3 11 1.4 11 1.5 11 1.5 10.9L6 6.4 10.5 10.9C10.5 11 10.6 11 10.7 11 10.8 11 10.8 11 10.9 10.9 11 10.8 11 10.6 10.9 10.5L6.4 6 10.9 1.5Z"></path>
+                        </g>
+                    </svg>
+                    <span class="is-visually-hidden">Close</span>
+                </a>
+                <img class="spacing" src="https://popkey-web.global.ssl.fastly.net/static/pkapp/img/modal-upload.gif" alt="Nicki Minaj waving her finger signaling no">
+                <div class="modal-content">
+                    <h1 class="spacing--baby">Oh noOo</h1>
+                    <p>You'll need an account to be able to upload</p>
+                    <p><a class="btn btn-default btn--block" href="/signup?redirect=/upload&ref=auth_modal">Sign up for FREE!</a></p>
+
+                    <small>Already have an account? <a href="/login?redirect=/upload&ref=auth_modal">Login now</a></small>
+                </div>
+            </div>
+            <a href="#!" class="modal-close-bg" title="Close this modal" data-close="Close" data-dismiss="modal"><span class="is-visually-hidden">Close</span></a>
+        </section>
+
+                    <section class="modal modal--upload" id="modal-favorite" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+                <div class="modal-inner">
+                    <a href="#!" class="modal-close" title="Close this modal" data-close="Close" data-dismiss="modal">
+                        <svg class="modal__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+                            <g fill-rule="evenodd">
+                                <path d="M10.9 1.5C11 1.4 11 1.2 10.9 1.1 10.8 1 10.6 1 10.5 1.1L6 5.6 1.5 1.1C1.4 1 1.2 1 1.1 1.1 1 1.2 1 1.4 1.1 1.5L5.6 6 1.1 10.5C1 10.6 1 10.8 1.1 10.9 1.2 11 1.2 11 1.3 11 1.4 11 1.5 11 1.5 10.9L6 6.4 10.5 10.9C10.5 11 10.6 11 10.7 11 10.8 11 10.8 11 10.9 10.9 11 10.8 11 10.6 10.9 10.5L6.4 6 10.9 1.5Z"></path>
+                            </g>
+                        </svg>
+                        <span class="is-visually-hidden">Close</span>
+                    </a>
+                    <img class="spacing" src="https://popkey-web.global.ssl.fastly.net/static/pkapp/img/modal-favorite.gif" alt="Man in suit saying I like this">
+                    <div class="modal-content">
+                        <h1 class="spacing--baby">Oh noOo</h1>
+                        <p>You'll need an account to be able to favorite this GIF.</p>
+                        <p><a class="btn btn-default btn--block" href="/signup">Sign up for FREE!</a></p>
+
+                        <small>Already have an account? <a href="/login">Login now</a></small>
+                    </div>
+                </div>
+                <a href="#!" class="modal-close-bg" title="Close this modal" data-close="Close" data-dismiss="modal"><span class="is-visually-hidden">Close</span></a>
+            </section>
+            
+    <section class="modal modal--upload" id="modal-report" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+        <div class="modal-inner">
+            <a href="#!" class="modal-close" title="Close this modal" data-close="Close" data-dismiss="modal">
+                <svg class="modal__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+                    <g fill-rule="evenodd">
+                        <path d="M10.9 1.5C11 1.4 11 1.2 10.9 1.1 10.8 1 10.6 1 10.5 1.1L6 5.6 1.5 1.1C1.4 1 1.2 1 1.1 1.1 1 1.2 1 1.4 1.1 1.5L5.6 6 1.1 10.5C1 10.6 1 10.8 1.1 10.9 1.2 11 1.2 11 1.3 11 1.4 11 1.5 11 1.5 10.9L6 6.4 10.5 10.9C10.5 11 10.6 11 10.7 11 10.8 11 10.8 11 10.9 10.9 11 10.8 11 10.6 10.9 10.5L6.4 6 10.9 1.5Z"></path>
+                    </g>
+                </svg>
+                <span class="is-visually-hidden">Close</span>
+            </a>
+            <img class="spacing" src="https://popkey-web.global.ssl.fastly.net/static/pkapp/img/modal-upload.gif" alt="Nicki Minaj waving her finger signaling no">
+            <div class="modal-content">
+                <h1 class="spacing--baby">Oh noOo</h1>
+                <p>You'll need an account to be able to report this GIF.</p>
+                <p><a class="btn btn-default btn--block" href="/signup">Sign up for FREE!</a></p>
+
+                <small>Already have an account? <a href="/login">Login now</a></small>
+            </div>
+        </div>
+        <a href="#!" class="modal-close-bg" title="Close this modal" data-close="Close" data-dismiss="modal"><span class="is-visually-hidden">Close</span></a>
+    </section>
+
+    <section class="modal modal--upload modal--edit" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+        <div class="modal-inner">
+            <a href="#!" class="modal-close" title="Close this modal" data-close="Close" data-dismiss="modal">
+                <svg class="modal__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+                    <g fill-rule="evenodd">
+                        <path d="M10.9 1.5C11 1.4 11 1.2 10.9 1.1 10.8 1 10.6 1 10.5 1.1L6 5.6 1.5 1.1C1.4 1 1.2 1 1.1 1.1 1 1.2 1 1.4 1.1 1.5L5.6 6 1.1 10.5C1 10.6 1 10.8 1.1 10.9 1.2 11 1.2 11 1.3 11 1.4 11 1.5 11 1.5 10.9L6 6.4 10.5 10.9C10.5 11 10.6 11 10.7 11 10.8 11 10.8 11 10.9 10.9 11 10.8 11 10.6 10.9 10.5L6.4 6 10.9 1.5Z"></path>
+                    </g>
+                </svg>
+                <span class="is-visually-hidden">Close</span>
+            </a>
+            <div id="modalEditContent"></div>
+        </div>
+        <a href="#!" class="modal-close-bg" title="Close this modal" data-close="Close" data-dismiss="modal"><span class="is-visually-hidden">Close</span></a>
+    </section>
+
+    
+    
+    <script>
+    ( function ( win ) {
+        if ( win.document.documentElement.className.indexOf( 'fonts-loaded' ) > -1 ) {
+            return;
+        }
+
+        function createCookie ( key, value, days ) {
+            var expires = '';
+
+            if ( days ) {
+                var date = new Date();
+                date.setTime( date.getTime() + ( days * 24 * 60 * 60 * 1000 ) );
+                expires = '; expires=' + date.toGMTString();
+            }
+            win.document.cookie = key + '=' + value + expires + '; path=/; domain=' + win.location.host;
+        }
+
+        var m1 = new win.FontFaceObserver( 'Montserrat Regular' );
+        var m2 = new win.FontFaceObserver( 'Montserrat Light' );
+        var l2 = new win.FontFaceObserver( 'loraitalic' );
+
+        win.Promise
+            .all( [ m1.check(), m2.check(), l2.check() ] )
+            .then( function fontLoaded () {
+                win.document.documentElement.className += ' fonts-loaded';
+                createCookie( 'fonts-loaded', true, 7 );
+            }, function fontFailed () {} );
+
+    } ( this ) );
+    </script>
+
+    <script>
+        var pkData = pkData || {};
+        pkData.auth = {"id":null,"api_token":null,"username":null,"authenticated":false};
+
+        // ensure the social share data gets flushed
+        pkData.socialShare = pkData.socialShare || {
+            title: 'Check out #PopKey - the world\'s first animated #GIF keyboard for #ios8',
+            category: 'Sidebar section',
+            link: "http:\/\/popkey.co\/",
+            image: "https:\/\/popkey-web.global.ssl.fastly.net\/static\/pkstatic\/img\/share\/popkey-share.jpg",
+            exclude: []
+        };
+    </script>
+
+    <script>
+        if (top != self) { top.location.replace(self.location.href); }
+    </script>
+
+    <script type="text/javascript" src="https://popkey-web.global.ssl.fastly.net/static/pkapp/js/pkapp.bundle.68a8a10d.min.js"></script>
+<script type="text/javascript">
+    //<!--
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga("create","UA-54438213-1");
+ga("send","pageview");
+    //-->
+</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9ec2d6ac78","applicationID":"6990934","transactionName":"ZwZUNkIFXkJQBUYNWF5MdwFEDV9fHgtXAF5R","queueTime":0,"applicationTime":55,"atts":"S0FXQAofTUw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
