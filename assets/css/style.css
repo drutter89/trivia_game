@@ -1,8 +1,25 @@
-body{
-    font-family: sans-serif;
+body {
+    font-family: monospace;
+    text-align: center;
+    background-image: url("http://cdn3.quizly.co/wp-content/uploads/2017/11/12024407/Can-You-Beat-This-Game-Of-22Jeopardy22.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: rgb(255, 255, 255);
 }
 
-#after_submit{
-    visibility: hidden;
+#form {
+    background-color: rgba(35, 152, 248, 0.87);
+    font-size: 20px;
+    width: 75%;
+}
 
+#after_submit {
+    visibility: hidden;
+    background-color: rgba(35, 152, 248, 0.87);
+    font-size: 25px;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
 }

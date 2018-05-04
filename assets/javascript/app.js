@@ -27,7 +27,7 @@ function check() {
 var form = `
 <form id="quiz" name="quiz">
 
-<p>What color is the sky?</p>
+<p>Question 1: What color is the sky?</p>
 <input type="radio" id="mc" name="question1" value="Blue"> Blue
 <br>
 <input type="radio" id="mc" name="question1" value="Green"> Green
@@ -38,13 +38,13 @@ var form = `
 <br>
 
 
-<p>Does 1+1=2 </p>
+<p>Questin 2: Does 1+1=2? </p>
 <input type="radio" id="mc" name="question2" value="Yes"> Yes
 <br>
 <input type="radio" id="mc" name="question2" value="No"> No
 <br>
 
-<p>What is the capital of Texas?</p>
+<p>Question 3: What is the capital of Texas?</p>
 <input type="radio" id="mc" name="question3" value="Austin"> Austin
 <br>
 <input type="radio" id="mc" name="question3" value="Baltimore"> Baltimore
@@ -54,7 +54,7 @@ var form = `
 <input type="radio" id="mc" name="question3" value="Las Vegas"> Las Vegas
 <br>
 
-<p>Will I pass this class?</p>
+<p>Question 4: Will I pass this class?</p>
 <input type="radio" id="mc" name="question4" value="Yes"> Yes
 <br>
 <input type="radio" id="mc" name="question4" value="No"> No
@@ -71,7 +71,7 @@ var form = `
 `
 var clicked = false;
 
-var time = 60;
+var time = 20;
 
 function timer() {
     var timing = setInterval(function () {
