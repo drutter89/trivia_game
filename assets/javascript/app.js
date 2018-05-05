@@ -1,3 +1,6 @@
+sound.play();
+
+
 function check() {
     var question1 = document.quiz.question1.value;
     var question2 = document.quiz.question2.value;
@@ -20,6 +23,9 @@ function check() {
 
     var messages = ["Great Job!", "Could be worse", "You can do better!"];
     var pictures = []
+
+
+
 
     document.getElementById("after_submit").style.visibility = "visible";
     document.getElementById("number_correct").innerHTML = "You got " + correct + " correct.";
@@ -89,6 +95,7 @@ function timer() {
             window.clearInterval(timing)
         }
     }, 1000)
+
 }
 
 $(function () {
@@ -103,3 +110,7 @@ $(function () {
     })
 
 })
+
+if (timer === 0) {
+    sound.pause()
+}
