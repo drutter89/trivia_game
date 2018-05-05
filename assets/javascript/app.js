@@ -37,7 +37,7 @@ var form = `
 <form id="quiz" name="quiz">
 
 <p>Question 1: The 7 Brightest Stars In Ursa Major Are Collectively Known As This</p>
-<input type="radio" id="mc" name="question1" value="BIG DIPPER"> Big Dipper
+<input type="radio" id="mc" name="question1" value="Big Dipper"> Big Dipper
 <br>
 <input type="radio" id="mc" name="question1" value="Lyra"> Lyra
 <br>
@@ -58,7 +58,7 @@ var form = `
 <br>
 
 <p>Question 3: ITS NAME IS FROM THE GREEK FOR "RIVER HORSE"</p>
-<input type="radio" id="mc" name="question3" value="HIPPOPOTAMUS"> Hippopotamus
+<input type="radio" id="mc" name="question3" value="Hippopotamus"> Hippopotamus
 <br>
 <input type="radio" id="mc" name="question3" value="Tiger"> Tiger
 <br>
@@ -110,7 +110,3 @@ $(function () {
     })
 
 })
-
-if (timer === 0) {
-    sound.pause()
-}
