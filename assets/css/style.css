@@ -39,8 +39,8 @@ h2 {
     width: 75%;
 }
 
-.button {
-    font-family: 'Times New Roman', Times, serif;
+#theme {
+    visibility: hidden;
 }
 
 /* Media Queries */
