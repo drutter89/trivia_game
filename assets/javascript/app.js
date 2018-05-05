@@ -1,6 +1,5 @@
 sound.play();
 
-
 function check() {
     var question1 = document.quiz.question1.value;
     var question2 = document.quiz.question2.value;
@@ -22,16 +21,20 @@ function check() {
     }
 
     var messages = ["Great Job!", "Could be worse", "You can do better!"];
-    var pictures = []
+    var pictures = [0, 1, 2]
 
 
 
 
     document.getElementById("after_submit").style.visibility = "visible";
     document.getElementById("number_correct").innerHTML = "You got " + correct + " correct.";
+
 }
 
-
+function startTime() {
+    document.getElementById("clock").style.visibility = "visible"
+    document.getElementById("clock").innerHTML = "Time Remaining: " + time + " seconds";
+}
 
 var form = `
 <form id="quiz" name="quiz">
@@ -90,6 +93,7 @@ function timer() {
     var timing = setInterval(function () {
         time = time - 1
         console.log(time)
+        startTime()
         if (time === 0) {
             check();
             window.clearInterval(timing)
@@ -102,11 +106,12 @@ $(function () {
     $(".start_button").on('click', function () {
         clicked = true;
         $(".start_button").remove()
-
         if (clicked) {
             $("#form").html(form)
         }
         timer()
+        startTime()
+        $("#clock")
     })
 
 })

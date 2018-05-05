@@ -32,3 +32,9 @@ h2 {
     background-color: rgba(35, 152, 248, 0.87);
     width: 75%;
 }
+
+#clock {
+    background-color: rgba(35, 152, 248, 0.87);
+    font-size: 18px;
+    width: 75%;
+}
