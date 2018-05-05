@@ -1,9 +1,3 @@
-var sound = "#sound";
-document.getElementById(sound).on("click")[
-    play.sound()
-]
-
-
 function check() {
     var question1 = document.quiz.question1.value;
     var question2 = document.quiz.question2.value;
@@ -42,7 +36,6 @@ function startTime() {
 
 var form = `
 <form id="quiz" name="quiz">
-
 <p>Question 1: The 7 Brightest Stars In Ursa Major Are Collectively Known As This</p>
 <input type="radio" id="mc" name="question1" value="Big Dipper"> Big Dipper
 <br>
@@ -52,8 +45,6 @@ var form = `
 <br>
 <input type="radio" id="mc" name="question1" value="Aquila"> Aquila
 <br>
-
-
 <p>Questin 2: MOSUL & RAMADI CAN BOTH BE FOUND IN THIS MIDEAST COUNTRY</p>
 <input type="radio" id="mc" name="question2" value="Iraq"> Iraq
 <br>
@@ -63,7 +54,6 @@ var form = `
 <br>
 <input type="radio" id="mc" name="question2" value="Turkey"> Turkey
 <br>
-
 <p>Question 3: ITS NAME IS FROM THE GREEK FOR "RIVER HORSE"</p>
 <input type="radio" id="mc" name="question3" value="Hippopotamus"> Hippopotamus
 <br>
@@ -73,7 +63,6 @@ var form = `
 <br>
 <input type="radio" id="mc" name="question3" value="Snake"> Snake
 <br>
-
 <p>Question 4: Will I pass this class?</p>
 <input type="radio" id="mc" name="question4" value="Yes"> Yes
 <br>
@@ -83,11 +72,8 @@ var form = `
 <br>
 <input type="radio" id="mc" name="question4" value="Only God Knows"> Only God Knows
 <br>
-
 <input id="button" type="button" value="I'm finished!" onclick="check();">
-
 </form>
-
 `
 var clicked = false;
 
